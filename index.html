@@ -760,81 +760,215 @@
 
     /* FOOTER */
     footer {
-      background: #040d1f;
-      padding: 2rem 2.5rem;
-      border-top: 3px solid var(--red);
+      background: #030a17;
+      color: rgba(255, 255, 255, 0.7);
+      padding: 5rem 2.5rem 2rem;
+      border-top: 4px solid var(--red);
+      font-size: 14px;
     }
 
-    .footer-inner {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 2rem;
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .footer-col h4 {
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 3.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .footer-col h3 {
       font-family: 'Oswald', sans-serif;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--white);
       letter-spacing: 0.05em;
-      margin-bottom: 8px;
       text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 8px;
     }
 
-    .footer-col ul {
-      list-style: none;
-      font-size: 13px;
+    .footer-col h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 30px;
+      height: 2px;
+      background: var(--red);
+    }
+
+    .footer-brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand-logo img {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .footer-desc {
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      font-size: 13.5px;
       color: rgba(255, 255, 255, 0.5);
-      line-height: 1.8;
     }
 
-    .footer-col ul a {
-      color: rgba(255, 255, 255, 0.5);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-col ul a:hover {
-      color: var(--red);
-    }
-
-    .footer-brand {
-      font-family: 'Oswald', sans-serif;
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--white);
-      letter-spacing: 0.05em;
-      margin-bottom: 4px;
-    }
-
-    .footer-detail {
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.35);
-      line-height: 1.8;
-    }
-
-    .footer-detail a {
-      color: var(--red);
-      text-decoration: none;
-    }
-
-    .footer-badges {
+    .footer-socials {
       display: flex;
       gap: 10px;
     }
 
-    .fbadge {
-      background: rgba(255, 255, 255, 0.06);
+    .footer-social-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      text-decoration: none;
+      transition: all 0.2s;
       border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 6px;
-      padding: 8px 16px;
-      font-family: 'Oswald', sans-serif;
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.6);
-      letter-spacing: 0.05em;
     }
+
+    .footer-social-btn:hover {
+      background: var(--red);
+      border-color: var(--red);
+      transform: translateY(-3px);
+    }
+
+    .footer-social-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links-list a {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-links-list a::before {
+      content: '›';
+      color: var(--red);
+      font-size: 16px;
+      line-height: 1;
+      transition: transform 0.2s;
+    }
+
+    .footer-links-list a:hover {
+      color: var(--white);
+      padding-left: 4px;
+    }
+
+    .footer-links-list a:hover::before {
+      transform: translateX(2px);
+    }
+
+    .footer-contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .footer-contact-item svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--red);
+      fill: none;
+      stroke-width: 2;
+      margin-top: 3px;
+      min-width: 16px;
+    }
+
+    .footer-contact-item span {
+      line-height: 1.4;
+      font-size: 13.5px;
+    }
+
+    .footer-contact-item a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-contact-item a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 12.5px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-bottom-links a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-bottom-links a:hover {
+      color: var(--white);
+    }
+
+    .footer-badges-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 1.25rem;
+    }
+
+    .footer-badge-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      padding: 6px 12px;
+      font-size: 11px;
+      text-transform: uppercase;
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.05em;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
     /* RESPONSIVE DESIGN */
     @media (max-width: 992px) {
       .hero {
@@ -857,6 +991,10 @@
       }
       .reviews-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
       }
     }
 
@@ -944,6 +1082,402 @@
         text-align: center;
         justify-content: center;
       }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+      }
+    }
+
+    /* REQUEST SERVICE FORM SECTION */
+    .request-section {
+      background: var(--white);
+      padding: 5rem 2.5rem;
+      border-bottom: 2px solid #dde2ee;
+    }
+    
+    .request-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 1.9fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    
+    .request-trust {
+      position: sticky;
+      top: 100px;
+    }
+    
+    .request-trust h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--navy-dark);
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+
+    .request-trust p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .trust-badges {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .trust-badge-card {
+      background: var(--off);
+      border: 1px solid #dde2ee;
+      border-radius: 8px;
+      padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      transition: all 0.2s;
+    }
+    
+    .trust-badge-card:hover {
+      border-color: var(--navy);
+      transform: translateY(-2px);
+    }
+    
+    .badge-icon-google {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+    
+    .badge-stars {
+      color: #f59e0b;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+    
+    .badge-count {
+      font-size: 13px;
+      color: var(--gray);
+      font-weight: 600;
+    }
+
+    .badge-logo-svg {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+    }
+    
+    /* FORM STYLES */
+    .form-card {
+      background: var(--off);
+      border: 2px solid #dde2ee;
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 10px 30px rgba(10, 31, 92, 0.02);
+    }
+    
+    .form-group-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--navy);
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      border-bottom: 2px solid var(--red);
+      padding-bottom: 6px;
+      display: inline-block;
+    }
+    
+    .form-grid-tiles {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 8px;
+      margin-bottom: 2rem;
+    }
+    
+    .tile-option {
+      position: relative;
+    }
+    
+    .tile-option input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    
+    .tile-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: var(--white);
+      border: 2px solid #dde2ee;
+      border-radius: 8px;
+      padding: 0.85rem 0.5rem;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--navy-dark);
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s;
+      height: 100%;
+    }
+    
+    .tile-option input:checked + .tile-label {
+      border-color: var(--red);
+      background: var(--navy);
+      color: var(--white);
+    }
+    
+    .form-grid-inputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-control-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    
+    .form-control-wrap.full-width {
+      grid-column: span 2;
+    }
+    
+    .form-control-wrap label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--navy-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .form-input, .form-textarea {
+      background: var(--white);
+      border: 2px solid #dde2ee;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: var(--text);
+      transition: border-color 0.2s;
+      font-family: inherit;
+      width: 100%;
+    }
+    
+    .form-input:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--navy);
+    }
+    
+    .form-textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    
+    .file-upload-wrap {
+      background: var(--white);
+      border: 2px dashed #dde2ee;
+      border-radius: 6px;
+      padding: 16px;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s;
+    }
+    
+    .file-upload-wrap:hover {
+      border-color: var(--navy);
+    }
+    
+    .file-upload-wrap input[type="file"] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+    
+    .file-upload-text {
+      font-size: 13px;
+      color: var(--gray);
+      pointer-events: none;
+    }
+    
+    .file-upload-text strong {
+      color: var(--navy);
+    }
+    
+    .form-disclaimer {
+      font-size: 12px;
+      color: var(--gray);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      background: rgba(204, 31, 31, 0.05);
+      border-left: 3px solid var(--red);
+      padding: 12px 16px;
+      border-radius: 0 6px 6px 0;
+    }
+    
+    .btn-submit {
+      width: 100%;
+      background: var(--red);
+      color: var(--white);
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0.05em;
+      padding: 16px;
+      border-radius: 6px;
+      border: 2px solid var(--red-dark);
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .btn-submit:hover {
+      background: var(--red-dark);
+      transform: translateY(-2px);
+    }
+
+    /* FAQ SECTION */
+    .faq-section {
+      background: var(--white);
+      padding: 5rem 2.5rem;
+      border-top: 2px solid #dde2ee;
+    }
+    
+    .faq-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    
+    .faq-item {
+      background: var(--off);
+      border: 2px solid #dde2ee;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.2s;
+    }
+    
+    .faq-item:hover {
+      border-color: var(--navy);
+    }
+    
+    .faq-question {
+      padding: 1.25rem 1.75rem;
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--navy-dark);
+      text-transform: uppercase;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      transition: background-color 0.2s;
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+    }
+    
+    .faq-question:hover {
+      background: rgba(10, 31, 92, 0.02);
+    }
+    
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.7;
+      padding: 0 1.75rem;
+    }
+    
+    .faq-item.active {
+      border-color: var(--navy);
+      background: var(--white);
+      box-shadow: 0 4px 12px rgba(10, 31, 92, 0.03);
+    }
+    
+    .faq-item.active .faq-question {
+      background: rgba(10, 31, 92, 0.04);
+      border-bottom: 2.5px solid #dde2ee;
+    }
+    
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      padding: 1.25rem 1.75rem;
+    }
+    
+    .faq-toggle-icon {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--red);
+      transition: transform 0.2s;
+      line-height: 1;
+    }
+    
+    .faq-item.active .faq-toggle-icon {
+      transform: rotate(45deg);
+    }
+
+    @media (max-width: 992px) {
+      .request-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .request-trust {
+        position: static;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .form-grid-inputs {
+        grid-template-columns: 1fr;
+      }
+      .form-control-wrap.full-width {
+        grid-column: span 1;
+      }
+      .form-card {
+        padding: 1.5rem 1.25rem;
+      }
+      .form-grid-tiles {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .faq-question {
+        font-size: 15px;
+        padding: 1rem 1.25rem;
+      }
+      .faq-item.active .faq-answer {
+        padding: 1rem 1.25rem;
+      }
     }
   </style>
 </head>
@@ -987,7 +1521,7 @@
     <div class="hero-left">
       <div class="emergency-tag">24/7 EMERGENCY SERVICE</div>
       <h1 class="display">
-Emergency Plumbing<br>
+        Emergency Plumbing<br>
         <span class="accent">& Drain Services </span>
       </h1>
       <div class="hero-tagline">Full-Service Plumbing & Drain Experts</div>
@@ -1007,6 +1541,154 @@ Emergency Plumbing<br>
     <div class="hero-right">
     </div>
   </div>
+
+  <!-- REQUEST PLUMBING SERVICE -->
+  <section class="request-section" id="request-service">
+    <div class="request-container">
+      <div class="request-trust">
+        <h2>Request Plumbing Service</h2>
+        <p>Get fast, professional service from Taft's leading drain and plumbing experts. Fill out the request form, attach photos if available, and our team will get back to you immediately.</p>
+        
+        <div class="trust-badges">
+          <!-- Google Reviews -->
+          <div class="trust-badge-card">
+            <svg viewBox="0 0 24 24" width="36" height="36" style="min-width: 36px;">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l3.66-2.85z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.85c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+            <div class="badge-icon-google">
+              <span class="badge-stars">★★★★★</span>
+              <span class="badge-count">2,765 Google Reviews</span>
+            </div>
+          </div>
+
+          <!-- HomeStars -->
+          <div class="trust-badge-card">
+            <svg viewBox="0 0 160 40" width="130" height="32" class="badge-logo-svg">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#FF3366"/>
+              <text x="32" y="26" fill="#111827" font-family="'Oswald', sans-serif" font-weight="700" font-size="18" letter-spacing="0.02em">HomeStars</text>
+            </svg>
+            <div class="badge-icon-google">
+              <span class="badge-stars">★★★★★</span>
+              <span class="badge-count">Top Rated Plumber</span>
+            </div>
+          </div>
+
+          <!-- BBB Accredited -->
+          <div class="trust-badge-card">
+            <svg viewBox="0 0 100 40" width="100" height="36" class="badge-logo-svg">
+              <rect width="100" height="40" rx="4" fill="#005A9C"/>
+              <text x="8" y="27" fill="#fff" font-family="'Oswald', sans-serif" font-weight="bold" font-size="20">BBB</text>
+              <rect x="52" y="5" width="43" height="30" rx="2" fill="#fff"/>
+              <text x="55" y="18" fill="#005A9C" font-family="'Open Sans', sans-serif" font-weight="bold" font-size="6.5">ACCREDITED</text>
+              <text x="58" y="27" fill="#005A9C" font-family="'Open Sans', sans-serif" font-weight="bold" font-size="6.5">BUSINESS</text>
+              <line x1="48" y1="5" x2="48" y2="35" stroke="#fff" stroke-width="1.5"/>
+            </svg>
+            <div class="badge-icon-google">
+              <span class="badge-count" style="color: var(--navy-dark); font-weight: 700;">A+ Accredited</span>
+              <span class="badge-count">Professional Standards</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <form id="plumbing-request-form" onsubmit="event.preventDefault(); alert('Thank you! Your service request has been received. We will contact you shortly.'); this.reset(); document.getElementById('file-upload-name').textContent = 'No file chosen';">
+          
+          <div class="form-group-title">Request Information</div>
+          
+          <!-- Category Tiles -->
+          <div class="form-grid-tiles">
+            <div class="tile-option">
+              <input type="checkbox" name="service_category" value="Residential" id="cat-residential">
+              <label for="cat-residential" class="tile-label">Residential</label>
+            </div>
+            <div class="tile-option">
+              <input type="checkbox" name="service_category" value="Commercial" id="cat-commercial">
+              <label for="cat-commercial" class="tile-label">Commercial</label>
+            </div>
+            <div class="tile-option">
+              <input type="checkbox" name="service_category" value="Emergency" id="cat-emergency">
+              <label for="cat-emergency" class="tile-label">Emergency</label>
+            </div>
+            <div class="tile-option">
+              <input type="checkbox" name="service_needed" value="Drain Cleaning & Clogs" id="srv-drain">
+              <label for="srv-drain" class="tile-label">Drain Cleaning & Clogs</label>
+            </div>
+            <div class="tile-option">
+              <input type="checkbox" name="service_needed" value="Water Heater" id="srv-waterheater">
+              <label for="srv-waterheater" class="tile-label">Water Heater</label>
+            </div>
+            <div class="tile-option">
+              <input type="checkbox" name="service_needed" value="Toilets, Faucets & Fixtures" id="srv-fixtures">
+              <label for="srv-fixtures" class="tile-label">Toilets & Fixtures</label>
+            </div>
+            <div class="tile-option">
+              <input type="checkbox" name="service_needed" value="Sump Pump / Sewage Pump" id="srv-sumppump">
+              <label for="srv-sumppump" class="tile-label">Sump / Sewage Pump</label>
+            </div>
+            <div class="tile-option">
+              <input type="checkbox" name="service_needed" value="Backwater Valve" id="srv-backwater">
+              <label for="srv-backwater" class="tile-label">Backwater Valve</label>
+            </div>
+            <div class="tile-option">
+              <input type="checkbox" name="service_needed" value="Camera Inspection" id="srv-camera">
+              <label for="srv-camera" class="tile-label">Camera Inspection</label>
+            </div>
+            <div class="tile-option">
+              <input type="checkbox" name="service_needed" value="Other / Not Sure" id="srv-other">
+              <label for="srv-other" class="tile-label">Other / Not Sure</label>
+            </div>
+          </div>
+
+          <div class="form-group-title">Contact & Job details</div>
+
+          <!-- Input Fields Grid -->
+          <div class="form-grid-inputs">
+            <div class="form-control-wrap">
+              <label for="form-name">Name*</label>
+              <input type="text" id="form-name" class="form-input" placeholder="Your Full Name" required>
+            </div>
+            <div class="form-control-wrap">
+              <label for="form-email">Email*</label>
+              <input type="email" id="form-email" class="form-input" placeholder="Your Email Address" required>
+            </div>
+            <div class="form-control-wrap">
+              <label for="form-phone">Phone*</label>
+              <input type="tel" id="form-phone" class="form-input" placeholder="Your Phone Number" required>
+            </div>
+            <div class="form-control-wrap">
+              <label for="form-address">Address</label>
+              <input type="text" id="form-address" class="form-input" placeholder="Service Address">
+            </div>
+            <div class="form-control-wrap full-width">
+              <label>Attach Photos / Files</label>
+              <div class="file-upload-wrap">
+                <input type="file" id="file-upload-input" accept="image/*,video/*,.pdf,.doc,.docx">
+                <div class="file-upload-text">
+                  <span id="file-upload-name">No file chosen</span><br>
+                  <small>Click to upload or drag & drop files here</small>
+                </div>
+              </div>
+            </div>
+            <div class="form-control-wrap full-width">
+              <label for="form-details">Job Details</label>
+              <textarea id="form-details" class="form-textarea" placeholder="Please describe the plumbing issues or services you need in detail..."></textarea>
+            </div>
+          </div>
+
+          <!-- Cancellation Disclaimer -->
+          <div class="form-disclaimer">
+            Please note: If the appointment is cancelled after a technician has been dispatched or while they are en route, a cancellation charge will apply.
+          </div>
+
+          <button type="submit" class="btn-submit">Send Service Request</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
 
 
@@ -1275,31 +1957,204 @@ Emergency Plumbing<br>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div>
-        <div class="footer-brand">★ UNITED JETTING & PLUMBING LLC ★</div>
-        <div class="footer-detail">
-          711 D St, Taft, CA 93268 &nbsp;·&nbsp; <a href="tel:+16616239141">661-623-9141</a><br>
-          <a href="mailto:unitedjetting@icloud.com">unitedjetting@icloud.com</a><br>
-          Open 24 Hours · Serving All of Kern County, CA · Est. 2020
+  <!-- FAQ SECTION -->
+  <section class="faq-section" id="faqs">
+    <div class="faq-container">
+      <div class="section-eyebrow" style="justify-content:center;margin-bottom:0.75rem;"><span>Got Questions?</span></div>
+      <div class="section-title" style="text-align:center;margin-bottom:1rem;">Frequently Asked Questions</div>
+      
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you offer emergency plumbing services in Taft and Kern County?
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes, we provide 24/7 emergency plumbing services. Whether it's a burst pipe, severe drain backup, or a failing water heater, our technicians are on standby day and night to handle any residential or commercial emergency.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What is Hydro-Jetting and when is it needed?
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Hydro-jetting uses high-pressure water streams to scour the inside of your pipes. It removes stubborn blockages, grease, tree roots, and scale buildup. It is far more effective and longer-lasting than traditional drain snaking.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How often should I have my drains cleaned?
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            For residential properties, we recommend professional drain cleaning every 1 to 2 years to prevent blockages. Commercial properties (especially restaurants) may require hydro-jetting quarterly or semi-annually.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What services do you provide for water heaters?
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            We offer water heater repair, maintenance, and new installations for both standard tank models and energy-efficient tankless water heaters. We can diagnose issues like lack of hot water, leaks, or strange noises.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How can a camera inspection help resolve plumbing issues?
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            A sewer camera inspection allows us to visually inspect the interior of your pipes in real-time. This helps us pinpoint the exact location and cause of clogs, leaks, or pipe damage without digging up your yard.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you handle commercial plumbing in addition to residential?
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Absolutely. We service commercial facilities including restaurants, office buildings, retail centers, and industrial sites. Our team is equipped with commercial-grade equipment to handle large-scale systems.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What is a backwater valve and do I need one?
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            A backwater valve prevents sewage from backing up into your basement or lower-level drains in the event of a municipal sewer backup. It is highly recommended for homes with basements or fixtures below sewer line level.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What areas in Kern County do you service?
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            We are based in Taft, CA, and proudly serve the entire Kern County area, including Bakersfield, Maricopa, Wasco, Shafter, Delano, and surrounding communities.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What is your cancellation policy once a technician is dispatched?
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            If an appointment is cancelled after a technician has been dispatched or is already en route to your location, a standard cancellation charge will apply to cover travel and dispatch costs.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How can I get an estimate for my plumbing project?
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            You can easily request an estimate by filling out our online request form above or calling/texting us directly at 661-623-9141. We provide transparent pricing prior to starting any work.
+          </div>
         </div>
       </div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#">Blog</a></li>
-        </ul>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <!-- Brand / About Column -->
+        <div class="footer-col">
+          <div class="footer-brand-logo">
+            <img src="logo.png" alt="United Jetting & Plumbing LLC">
+          </div>
+          <p class="footer-desc">Professional hydro-jetting, sewer diagnostics, and full-service emergency plumbing solutions for homeowners and commercial businesses throughout Taft and the greater Kern County area.</p>
+          <div class="footer-socials">
+            <!-- Google -->
+            <a href="#reviews" class="footer-social-btn" aria-label="Google reviews">
+              <svg viewBox="0 0 24 24"><path d="M12.24 10.285V14.4h6.887c-.648 2.41-2.519 4.114-5.136 4.114A5.99 5.99 0 0 1 8 12.527a5.99 5.99 0 0 1 5.99-5.99c2.476 0 4.114 1.488 4.114 1.488l2.91-2.91S18.337 3 13.99 3c-5.253 0-9.5 4.247-9.5 9.5s4.247 9.5 9.5 9.5c5.033 0 9.007-3.553 9.007-9.155 0-.612-.061-1.06-.061-1.06H12.24Z"/></svg>
+            </a>
+            <!-- Facebook -->
+            <a href="#" class="footer-social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.8c4.56-.93 8-4.96 8-9.8z"/></svg>
+            </a>
+            <!-- Yelp -->
+            <a href="#" class="footer-social-btn" aria-label="Yelp">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.6 15.3c-.2.4-.7.6-1.1.4l-2.4-1.2-2.4 1.2c-.4.2-.9 0-1.1-.4s0-.9.4-1.1l2.4-1.2-2.4-1.2c-.4-.2-.6-.7-.4-1.1s.7-.6 1.1-.4l2.4 1.2 2.4-1.2c.4-.2.9 0 1.1.4s0 .9-.4 1.1l-2.4 1.2 2.4 1.2c.4.2.6.7.4 1.1z"/></svg>
+            </a>
+          </div>
+          <div class="footer-badges-row">
+            <span class="footer-badge-item">Est. 2020</span>
+            <span class="footer-badge-item">Locally Owned</span>
+          </div>
+        </div>
+
+        <!-- Quick Navigation Column -->
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#request-service">Request Service</a></li>
+            <li><a href="#coverage">Why Choose Us</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#faqs">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Services Column -->
+        <div class="footer-col">
+          <h3>Plumbing Services</h3>
+          <ul class="footer-links-list">
+            <li><a href="#services">Drain Cleaning & Clogs</a></li>
+            <li><a href="#services">Hydro-Jetting Specialist</a></li>
+            <li><a href="#services">Sewer Line Diagnostics</a></li>
+            <li><a href="#services">Water Heater Repair</a></li>
+            <li><a href="#services">Sump Pump Installation</a></li>
+            <li><a href="#services">Camera Inspections</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="footer-col">
+          <h3>Contact Details</h3>
+          <div class="footer-contact-details">
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+              <span>711 D St,<br>Taft, CA 93268</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.27 1.11z"/></svg>
+              <span><a href="tel:+16616239141">661-623-9141</a></span>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <span><a href="mailto:unitedjetting@icloud.com">unitedjetting@icloud.com</a></span>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <span>Open 24 Hours<br>7 Days a Week</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>Operating Hours</h4>
-        <ul>
-          <li>Mon-Fri: 24 Hours</li>
-          <li>Sunday: 24 Hours</li>
-        </ul>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>&copy; 2026 United Jetting & Plumbing LLC. All rights reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#request-service">Request Estimate</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -1321,6 +2176,30 @@ Emergency Plumbing<br>
     navItems.forEach(item => {
       item.addEventListener('click', () => {
         navLinks.classList.remove('active');
+      });
+    });
+
+    // File upload change handler
+    document.getElementById('file-upload-input').addEventListener('change', function(e) {
+      const fileName = e.target.files[0] ? e.target.files[0].name : 'No file chosen';
+      document.getElementById('file-upload-name').textContent = fileName;
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        const isActive = item.classList.contains('active');
+        
+        // Close all FAQ items
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+          otherItem.classList.remove('active');
+        });
+        
+        // Toggle the clicked one
+        if (!isActive) {
+          item.classList.add('active');
+        }
       });
     });
   </script>
